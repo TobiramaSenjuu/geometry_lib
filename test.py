@@ -1,8 +1,10 @@
+# coding=windows-1251
+
 import geometry
 
-areacircle = geometry.circle_area(5)
-areatri = geometry.triangle_area(14, 15, 13)
+area_of_triangle = geometry.triangle_area(10, 5, 7)
 
-print(areacircle)
+area_of_circle = geometry.circle_area(13)
 
-print(areatri)
+print(f"Площадь треугольника равна: {area_of_triangle}")
+print(f"Площадь круга равна: {area_of_circle}")

@@ -1,26 +1,54 @@
-# -*- coding: utf-8 -*-
-
+# coding=windows-1251
 
 import math
 
 
-# Создаем функцию вычисления площади круга, классическая формула S = pi * r^2
+# Создаем функцию вычисления площади круга, классическая формула S = pi * r^2:
+
 def circle_area(radius):
 
-  return math.pi * radius ** 2
-
-# Функция вычисления площади треугольника по формуле Герона
-
-def triangle_area(a, b ,c):
-
-  semiperimeter = (a + b + c) / 2
-
-  area = math.sqrt(semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c))
+  area = math.pi * radius ** 2
 
   return area
 
-# Пример использования
+# Функция вычисления площади треугольника 
 
-# print(circle_area(5))
+def triangle_area(a, b ,c):
+  
+  # Возводим значения в квадрат и присваиваем переменной для дальнейшей проверки на прямоугольность треугольника:
 
-# print(triangle_area(14, 15, 13))
+  a2 = a ** 2
+  b2 = b ** 2
+  c2 = c ** 2
+
+  # Проверям прямоугольный ли треугольник:
+
+  if (c2 == a2 + b2) or (a2 == c2 - b2) or (b2 == c2 - a2):
+
+    print("Треугольник прямоугольный.")
+
+    area = ((a * b)/2)
+
+
+    return area
+  
+  else:
+
+    print("Треугольник НЕ прямоугольный.")
+
+    # Вычисляем площадь по трем сторонам по формуле Герона:
+
+    semiperimeter = (a + b + c) / 2
+
+    area = math.sqrt(semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c))
+
+
+    return area
+
+# Пример использования библиотеки:
+
+# import geometry
+
+# area_of_triangle = geometry.triangle_area(3, 4, 5)
+
+# area_of_circle = geometry.circle_area(8)
