@@ -1,4 +1,5 @@
-# coding=windows-1251
+# -*- coding: utf-8 -*-
+
 
 import geometry
 
